@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qendra e Popullit Shqiptar</title>
+  <meta name="description" content="Publikoni produkte lokale dhe zbuloni dyqanet për komunitetin shqiptar." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="layout container header-inner">
+      <a id="brandText" class="brand" href="#home" data-i18n="brandText"><span class="brand-mark" aria-hidden="true">+</span>Qendra e Popullit Shqiptar</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a id="navHome" href="#home" data-i18n="navHome">Kreu</a>
+        <a id="navShops" href="#shops" data-i18n="navShops">Dyqanet</a>
+        <a id="navPublisher" href="#publisher" data-i18n="navPublisher">Botuesi</a>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle" class="btn btn-secondary theme-button" type="button" aria-label="Toggle theme">
+          <span class="theme-icon">🌙</span>
+          <span id="themeLabel">Dark</span>
+        </button>
+        <label class="lang-switch">
+          <span class="sr-only" data-i18n="languageLabel">Gjuha</span>
+          <select id="languageSelect" aria-label="Language">
+            <option value="sq">Shqip</option>
+            <option value="en">English</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="layout container hero-grid">
+        <div>
+          <p id="heroEyebrow" class="eyebrow" data-i18n="heroEyebrow">Qendra e Popullit Shqiptar</p>
+          <h1 id="heroTitle" data-i18n="heroTitle">Rrjeti i dyqaneve dhe shërbimeve për komunitetin shqiptar</h1>
+          <p id="heroText" data-i18n="heroText">Krijoni dyqane lokale, shfaqni produkte, dhe publikoni artikuj të rinj me një botues të thjeshtë.
+             Kjo faq​e lidh të gjitha llojet e tregtisë për njerëzit e Shqipërisë.</p>
+          <div class="hero-actions">
+            <a id="heroPrimary" class="btn btn-primary" href="#shops" data-i18n="heroPrimary">Shiko dyqanet</a>
+            <a id="heroSecondary" class="btn btn-secondary" href="#publisher" data-i18n="heroSecondary">Botoni produkt</a>
+          </div>
+          <div class="hero-proof" aria-label="Marketplace highlights">
+            <div><strong>09</strong><span>Kategori</span></div>
+            <div><strong>24/7</strong><span>Publikim</span></div>
+            <div><strong>100%</strong><span>Komunitet</span></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-topline"><span class="live-dot"></span> Marketplace live</div>
+          <h2 id="heroCardTitle" data-i18n="heroCardTitle">Shop categories</h2>
+          <p id="heroCardText" data-i18n="heroCardText">Select one category and publish a new product to see it appear below.</p>
+          <div class="category-tags">
+            <span data-category-key="fashion">Moda</span>
+            <span data-category-key="electronics">Elektro</span>
+            <span data-category-key="grocery">Market</span>
+            <span data-category-key="homegoods">Shtëpi</span>
+            <span data-category-key="books">Librat</span>
+            <span data-category-key="beauty">Bukuri</span>
+            <span data-category-key="sports">Sport</span>
+            <span data-category-key="office">Zyrë</span>
+            <span data-category-key="advertising">Reklamë</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shops" id="shops">
+      <div class="layout container">
+        <div class="section-header">
+          <p id="shopsEyebrow" class="eyebrow" data-i18n="shopsEyebrow">Llojet e dyqaneve</p>
+          <h2 id="shopsTitle" data-i18n="shopsTitle">Zbuloni të gjitha dyqanet për komunitetin shqiptar</h2>
+        </div>
+        <div class="shop-grid">
+          <article class="shop-card">
+            <h3>Dyqan mode</h3>
+            <p>Veshje, aksesorë dhe stilet më të fundit për çdo shije.</p>
+          </article>
+          <article class="shop-card">
+            <h3>Dyqan elektronikash</h3>
+            <p>Gadgets, pajisje audio dhe teknologji të reja për jetën moderne.</p>
+          </article>
+          <article class="shop-card">
+            <h3>Market ushqimor</h3>
+            <p>Produkte të freskëta, ushqime të përditshme dhe artikuj për shtëpi.</p>
+          </article>
+          <article class="shop-card">
+            <h3>Artikuj për shtëpi</h3>
+            <p>Mobilje, dekor dhe sende të kujdesit për ambientin e shtëpisë.</p>
+          </article>
+          <article class="shop-card">
+            <h3>Librari</h3>
+            <p>Librat më të mirë, pedagogjitë dhe dhuratat për lexuesit shqiptarë.</p>
+          </article>
+          <article class="shop-card">
+            <h3>Dyqan bukurie</h3>
+            <p>Produktet e bukurisë dhe mirëqenies për kujdesjen personale.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="publisher" id="publisher">
+      <div class="layout container publisher-grid">
+        <div class="publisher-panel">
+          <div class="section-header">
+            <p id="publisherEyebrow" class="eyebrow" data-i18n="publisherEyebrow">Botues produkti</p>
+            <h2 id="publisherTitle" data-i18n="publisherTitle">Publikoni produkte të reja në qendër</h2>
+            <p id="publisherCopy" class="section-copy" data-i18n="publisherCopy">Shtoni oferta të reja, ngarkoni imazhe dhe shikoni inventarin tuaj të përditësuar menjëherë.</p>
+          </div>
+          <form id="publisherForm" class="product-form">
+            <label>
+              <span id="labelProductName" data-i18n="labelProductName">Emri i produktit</span>
+              <input type="text" id="productName" placeholder="p.sh. Kufje pa tel" required />
+            </label>
+            <label>
+              <span id="labelProductCategory" data-i18n="labelProductCategory">Kategoria</span>
+              <select id="productCategory" required>
+                <option value="fashion" data-i18n="categoryFashion">Moda</option>
+                <option value="electronics" data-i18n="categoryElectronics">Elektro</option>
+                <option value="grocery" data-i18n="categoryGrocery">Market</option>
+                <option value="homegoods" data-i18n="categoryHomeGoods">Shtëpi</option>
+                <option value="books" data-i18n="categoryBooks">Librat</option>
+                <option value="beauty" data-i18n="categoryBeauty">Bukuri</option>
+                <option value="sports" data-i18n="categorySports">Sport</option>
+                <option value="office" data-i18n="categoryOffice">Zyrë</option>
+                <option value="advertising" data-i18n="categoryAdvertising">Reklamë</option>
+              </select>
+            </label>
+            <label>
+              <span id="labelProductPrice" data-i18n="labelProductPrice">Çmimi</span>
+              <input type="number" id="productPrice" min="0" step="0.01" placeholder="49.99" required />
+            </label>
+            <label>
+              <span id="labelProductDescription" data-i18n="labelProductDescription">Përshkrimi</span>
+              <textarea id="productDescription" rows="4" placeholder="Përshkruani produktin"></textarea>
+            </label>
+            <label>
+              <span id="labelProductImage" data-i18n="labelProductImage">URL e imazhit</span>
+              <input type="url" id="productImage" placeholder="https://example.com/image.jpg" />
+            </label>
+            <button id="publishButton" type="submit" class="btn btn-primary" data-i18n="publisherButton">Publiko produkt</button>
+          </form>
+        </div>
+        <div class="product-preview">
+          <div class="section-header">
+            <p id="inventoryEyebrow" class="eyebrow" data-i18n="inventoryEyebrow">Inventar live</p>
+            <h2 id="inventoryTitle" data-i18n="inventoryTitle">Produktet e publikuara shfaqen menjëherë</h2>
+          </div>
+          <div class="product-summary">
+            <span id="productCount">0 produkte të publikuara</span>
+          </div>
+          <div id="productList" class="product-list">
+            <div class="empty-state">
+              <p id="emptyText" data-i18n="emptyText">Ende nuk ka produkte të publikuara.</p>
+              <button id="loadSample" class="btn btn-secondary" data-i18n="loadSample">Ngarko produkte shembull</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="layout container footer-content">
+      <p id="footerText" data-i18n="footerText">© 2026 Qendra e Popullit Shqiptar. Krijoni listime produktesh për çdo lloj dyqani.</p>
+      <p id="footerOwner" data-i18n="footerOwner">Pronari: <a href="https://www.facebook.com/oni.328075/" target="_blank" rel="noopener noreferrer">Oni</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
