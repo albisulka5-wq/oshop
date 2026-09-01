@@ -3,6 +3,7 @@ const productList = document.getElementById('productList');
 const loadSample = document.getElementById('loadSample');
 const themeToggle = document.getElementById('themeToggle');
 const languageSelect = document.getElementById('languageSelect');
+const searchInput = document.getElementById('searchInput');
 
 const translations = {
   sq: {
@@ -43,6 +44,8 @@ const translations = {
     inventoryEyebrow: 'Inventar live',
     inventoryTitle: 'Produktet e publikuara shfaqen menjëherë',
     emptyText: 'Ende nuk ka produkte të publikuara.',
+    searchPlaceholder: 'Kërko produkte...',
+    noResults: 'Asnjë produkt nuk përkon me kërkimin tuaj.',
     countProductOne: '1 produkt i publikuar',
     countProductMany: '{count} produkte të publikuara',
     loadSample: 'Ngarko produkte shembull',
@@ -88,6 +91,8 @@ const translations = {
     inventoryEyebrow: 'Live inventory',
     inventoryTitle: 'Published products appear instantly',
     emptyText: 'No products published yet.',
+    searchPlaceholder: 'Search products...',
+    noResults: 'No products match your search.',
     countProductOne: '1 product published',
     countProductMany: '{count} products published',
     loadSample: 'Load sample products',
@@ -149,10 +154,24 @@ function getCurrentLanguage() {
   return languageSelect?.value || localStorage.getItem('shopLanguage') || 'sq';
 }
 
+function getFilteredProducts() {
+  const searchTerm = searchInput?.value.toLowerCase().trim() || '';
+  
+  if (!searchTerm) {
+    return products;
+  }
+  
+  return products.filter(product => 
+    product.name.toLowerCase().includes(searchTerm) ||
+    product.description.toLowerCase().includes(searchTerm) ||
+    product.category.toLowerCase().includes(searchTerm)
+  );
+}
+
 function renderProducts() {
   updateProductCount();
-
   const currentLang = getCurrentLanguage();
+  const filteredProducts = getFilteredProducts();
 
   if (products.length === 0) {
     productList.innerHTML = `
@@ -166,7 +185,16 @@ function renderProducts() {
     return;
   }
 
-  productList.innerHTML = products.map(product => {
+  if (filteredProducts.length === 0) {
+    productList.innerHTML = `
+      <div class="empty-state">
+        <p>${translations[currentLang].noResults}</p>
+      </div>
+    `;
+    return;
+  }
+
+  productList.innerHTML = filteredProducts.map(product => {
     const image = product.image || 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=400&q=80';
     return `
       <article class="product-card">
@@ -230,6 +258,7 @@ publisherForm.addEventListener('submit', handleSubmit);
 loadSample?.addEventListener('click', handleLoadSample);
 themeToggle?.addEventListener('click', toggleTheme);
 languageSelect?.addEventListener('change', handleLanguageChange);
+searchInput?.addEventListener('input', renderProducts);
 
 function translatePage(language) {
   document.querySelectorAll('[data-i18n]').forEach(element => {
