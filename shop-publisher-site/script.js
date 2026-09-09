@@ -4,6 +4,7 @@ const loadSample = document.getElementById('loadSample');
 const themeToggle = document.getElementById('themeToggle');
 const languageSelect = document.getElementById('languageSelect');
 const searchInput = document.getElementById('searchInput');
+const formMessage = document.getElementById('formMessage');
 
 const translations = {
   sq: {
@@ -16,7 +17,7 @@ const translations = {
     themeLight: '☀️ Light',
     heroEyebrow: 'Qendra e Popullit Shqiptar',
     heroTitle: 'Rrjeti i dyqaneve dhe shërbimeve për komunitetin shqiptar',
-    heroText: 'Krijoni dyqane lokale, shfaqni produkte, dhe publikoni artikuj të rinj me një botues të thjeshtë. Kjo faq​e lidh të gjitha llojet e tregtisë për njerëzit e Shqipërisë.',
+    heroText: 'Krijoni dyqane lokale, shfaqni produkte, dhe publikoni artikuj të rinj me një botues të thjeshtë. Kjo faq​e lidh të gjitha llojet e tregtisë për njerëzit e Shqipërisë.',[...]
     heroPrimary: 'Shiko dyqanet',
     heroSecondary: 'Botoni produkt',
     heroCardTitle: 'Kategoritë e dyqaneve',
@@ -51,7 +52,8 @@ const translations = {
     loadSample: 'Ngarko produkte shembull',
     footerText: '© 2026 Qendra e Popullit Shqiptar. Krijoni listime produktesh për çdo lloj dyqani.',
     footerOwner: 'Pronari: Oni',
-    alertInvalid: 'Ju lutem vendosni emrin e produktit dhe çmim të vlefshëm.'
+    alertInvalid: 'Ju lutem vendosni emrin e produktit dhe çmim të vlefshëm.',
+    successPublish: 'Produkti u publikua me sukses!'
   },
   en: {
     brandText: 'Albania People Center',
@@ -98,7 +100,8 @@ const translations = {
     loadSample: 'Load sample products',
     footerText: '© 2026 Albania People Center. Create product listings for every shop type.',
     footerOwner: 'Owner: Oni',
-    alertInvalid: 'Please provide a product name and valid price.'
+    alertInvalid: 'Please provide a product name and valid price.',
+    successPublish: 'Product published successfully!'
   }
 };
 
@@ -166,6 +169,18 @@ function getFilteredProducts() {
     product.description.toLowerCase().includes(searchTerm) ||
     product.category.toLowerCase().includes(searchTerm)
   );
+}
+
+function showMessage(message, type = 'success') {
+  if (!formMessage) return;
+  
+  formMessage.textContent = message;
+  formMessage.className = `form-message form-message-${type}`;
+  formMessage.style.display = 'block';
+  
+  setTimeout(() => {
+    formMessage.style.display = 'none';
+  }, 3000);
 }
 
 function renderProducts() {
@@ -242,9 +257,10 @@ function handleSubmit(event) {
   const price = parseFloat(document.getElementById('productPrice').value);
   const description = document.getElementById('productDescription').value.trim();
   const image = document.getElementById('productImage').value.trim();
+  const currentLang = getCurrentLanguage();
 
   if (!name || Number.isNaN(price)) {
-    alert('Ju lutem vendosni emrin e produktit dhe çmim të vlefshëm.');
+    showMessage(translations[currentLang].alertInvalid, 'error');
     return;
   }
 
@@ -252,6 +268,7 @@ function handleSubmit(event) {
   saveProducts();
   renderProducts();
   publisherForm.reset();
+  showMessage(translations[currentLang].successPublish, 'success');
 }
 
 publisherForm.addEventListener('submit', handleSubmit);
