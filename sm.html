@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Documentation</title>
+    <link rel="stylesheet" href="sm.css" />
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>Java Documentation</header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#Syntax">Syntax</a></li>
+            <li><a class="nav-link" href="#Comments">Comments</a></li>
+            <li><a class="nav-link" href="#Variables">Variables</a></li>
+            <li><a class="nav-link" href="#Data_Types">Data Types</a></li>
+            <li><a class="nav-link" href="#Type_Casting">Type Casting</a></li>
+            <li><a class="nav-link" href="#Operators">Operators</a></li>
+            <li><a class="nav-link" href="#If_else_Statement">If else Statement</a></li>
+            <li><a class="nav-link" href="#Switch">Switch</a></li>
+            <li><a class="nav-link" href="#While_Loop">While Loop</a></li>
+            <li><a class="nav-link" href="#For_Loop">For Loop</a></li>
+            <li><a class="nav-link" href="#Break_Continue">Break Continue</a></li>
+            <li><a class="nav-link" href="#Arrays">Arrays</a></li>
+
+            <li class="section-title">Java Classes</li>
+            <li><a class="nav-link" href="#OOP">OOP</a></li>
+            <li><a class="nav-link" href="#Classes">Classes</a></li>
+            <li><a class="nav-link" href="#Constructors">Constructors</a></li>
+            <li><a class="nav-link" href="#Encapsulation">Encapsulation</a></li>
+            <li><a class="nav-link" href="#Inheritance">Inheritance</a></li>
+            <li><a class="nav-link" href="#Polymorphism">Polymorphism</a></li>
+            <li><a class="nav-link" href="#Abstraction">Abstraction</a></li>
+            <li><a class="nav-link" href="#Reference">Reference</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <article>
+                <p>
+                    Java is a class-based, object-oriented programming language developed by <b>James Gosling</b>
+                    at Sun Microsystems in 1995. It is simple, readable, and helps developers write reusable code.
+                </p>
+                <ul>
+                    <li>Mobile applications.</li>
+                    <li>Desktop applications.</li>
+                    <li>Web applications.</li>
+                    <li>Database connections.</li>
+                    <li>Games.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="main-section" id="Syntax">
+            <header>Syntax</header>
+            <article>
+                <p>The Java program flow is simple:</p>
+                <ul>
+                    <li>Create the file with your code.</li>
+                    <li>Compile with <code>javac HelloWorld.java</code>.</li>
+                    <li>Run it with <code>java HelloWorld</code>.</li>
+                </ul>
+                <p>First Java example:</p>
+                <code>System.out.println("Hello World!");</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Comments">
+            <header>Comments</header>
+            <article>
+                <p>Comments improve readability and can help explain code.</p>
+                <ul>
+                    <li>Single-line comments use <code>//</code>.</li>
+                    <li>Multi-line comments use <code>/* ... */</code>.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="main-section" id="Variables">
+            <header>Variables</header>
+            <article>
+                <p>Variables store data used by your program.</p>
+                <code>int age = 25;
+String name = "Alice";</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Data_Types">
+            <header>Data Types</header>
+            <article>
+                <p>Java has primitive and reference types. Primitive ones include int, double, boolean, and char.</p>
+                <code>int score = 90;
+double price = 25.99;
+boolean isActive = true;</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Type_Casting">
+            <header>Type Casting</header>
+            <article>
+                <p>Type casting converts one data type into another when needed.</p>
+                <code>double x = 9.78;
+int y = (int) x;</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Operators">
+            <header>Operators</header>
+            <article>
+                <p>Java supports arithmetic, relational, logical, and assignment operators.</p>
+                <code>int total = 10 + 5;
+boolean check = (a > b) && (c == d);</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="If_else_Statement">
+            <header>If else Statement</header>
+            <article>
+                <p>Decision-making is done with if, else if, and else statements.</p>
+                <code>if (age >= 18) {
+    System.out.println("Adult");
+} else {
+    System.out.println("Minor");
+}</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Switch">
+            <header>Switch</header>
+            <article>
+                <p>Switch statements help test one variable against multiple values.</p>
+                <code>switch (day) {
+    case 1: System.out.println("Monday"); break;
+    default: System.out.println("Other");
+}</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="While_Loop">
+            <header>While Loop</header>
+            <article>
+                <p>A while loop runs as long as the condition remains true.</p>
+                <code>int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
+}</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="For_Loop">
+            <header>For Loop</header>
+            <article>
+                <p>A for loop is useful when you know how many times you want to repeat code.</p>
+                <code>for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Break_Continue">
+            <header>Break Continue</header>
+            <article>
+                <p>Break stops the loop, while continue jumps to the next iteration.</p>
+                <code>for (int i = 0; i < 10; i++) {
+    if (i == 5) continue;
+    if (i == 8) break;
+    System.out.println(i);
+}</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Arrays">
+            <header>Arrays</header>
+            <article>
+                <p>Arrays store multiple values of the same type in one variable.</p>
+                <code>int[] numbers = {1, 2, 3, 4};
+System.out.println(numbers[0]);</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="OOP">
+            <header>OOP</header>
+            <article>
+                <p>Object-Oriented Programming organizes code into classes and objects.</p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Classes">
+            <header>Classes</header>
+            <article>
+                <p>A class is a blueprint for creating objects.</p>
+                <code>class Car {
+    String model;
+}</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Constructors">
+            <header>Constructors</header>
+            <article>
+                <p>Constructors initialize new objects when they are created.</p>
+                <code>class Student {
+    Student() {
+        System.out.println("Created");
+    }
+}</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Encapsulation">
+            <header>Encapsulation</header>
+            <article>
+                <p>Encapsulation hides data and exposes controlled access through methods.</p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Inheritance">
+            <header>Inheritance</header>
+            <article>
+                <p>Inheritance lets a class reuse behavior from a parent class.</p>
+                <code>class Animal { void eat() {} }
+class Dog extends Animal { }</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Polymorphism">
+            <header>Polymorphism</header>
+            <article>
+                <p>Polymorphism allows the same method name to act differently depending on the object.</p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Abstraction">
+            <header>Abstraction</header>
+            <article>
+                <p>Abstraction hides unnecessary details and exposes only essential behavior.</p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Reference">
+            <header>Reference</header>
+            <article>
+                <p>References point to objects in memory and allow interaction with them.</p>
+                <code>String name = new String("Alice");</code>
+            </article>
+        </section>
+    </main>
+
+    <script src="sm.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReviewLab | Product Review</title>
+    <meta
+      name="description"
+      content="Modern product review landing page with ratings, highlights, and customer feedback."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand" aria-label="ReviewLab home">
+          <span class="brand-mark">R</span>
+          <span>ReviewLab</span>
+        </div>
+
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#featured">Featured</a>
+          <a href="#ratings">Ratings</a>
+          <a href="#verdict">Verdict</a>
+          <a href="#reviews">Reviews</a>
+        </nav>
+
+        <button class="cta-button" type="button">Write a review</button>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Editor’s choice</p>
+            <h1>Smart living, reviewed with real-world clarity.</h1>
+            <p class="intro">
+              We tested this everyday essential across speed, comfort, design,
+              and value to help you decide faster without the guesswork.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-btn" href="#featured">Read the review</a>
+              <a class="secondary-btn" href="#ratings">See ratings</a>
+            </div>
+
+            <ul class="hero-meta" aria-label="Key product stats">
+              <li>
+                <strong>4.9/5</strong>
+                <span>Average rating</span>
+              </li>
+              <li>
+                <strong>1,248</strong>
+                <span>Verified reviews</span>
+              </li>
+              <li>
+                <strong>4 days</strong>
+                <span>Field testing</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero-visual" aria-label="Product preview">
+            <div class="device-card">
+              <div class="device-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+
+              <div class="device-screen">
+                <div class="screen-top">
+                  <span>SmartHome Pro</span>
+                  <span class="badge">New</span>
+                </div>
+                <div class="screen-metric">
+                  <span>Battery life</span>
+                  <strong>42 hrs</strong>
+                </div>
+                <div class="bars" aria-hidden="true">
+                  <span style="height: 38%"></span>
+                  <span style="height: 54%"></span>
+                  <span style="height: 70%"></span>
+                  <span style="height: 88%"></span>
+                  <span style="height: 100%"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-one">+42% battery</div>
+            <div class="floating-badge badge-two">9.4 / 10</div>
+          </div>
+        </section>
+
+        <section class="summary-strip" id="ratings">
+          <article>
+            <span class="stat-number">96%</span>
+            <span class="stat-label">would recommend</span>
+          </article>
+          <article>
+            <span class="stat-number">4.8s</span>
+            <span class="stat-label">setup time</span>
+          </article>
+          <article>
+            <span class="stat-number">12</span>
+            <span class="stat-label">smart features</span>
+          </article>
+          <article>
+            <span class="stat-number">2 yrs</span>
+            <span class="stat-label">warranty</span>
+          </article>
+        </section>
+
+        <section class="review-layout" id="featured">
+          <article class="panel feature-copy">
+            <p class="eyebrow">Product review</p>
+            <h2>Why this product stands out.</h2>
+            <p>
+              The experience is consistently smooth: it feels premium, responds
+              quickly, and integrates into daily routines without friction.
+              Whether you are organizing your desk, managing an indoor climate,
+              or automating simple tasks, it quietly earns its place in the
+              home.
+            </p>
+            <p>
+              The best part is how balanced it feels. It is powerful enough for
+              advanced users, but still easy enough for anyone who wants a
+              simpler, smarter setup.
+            </p>
+
+            <ul class="checklist">
+              <li>Ultra-fast setup and pairing</li>
+              <li>Clean interface with useful defaults</li>
+              <li>Reliable performance throughout the week</li>
+              <li>Solid value for the price point</li>
+            </ul>
+
+            <blockquote>
+              “It feels premium without being complicated, and the daily
+              experience is genuinely satisfying.”
+            </blockquote>
+          </article>
+
+          <aside class="panel score-panel" id="verdict">
+            <div class="score-ring">
+              <div class="score-inner">
+                <strong>9.4</strong>
+                <span>Excellent</span>
+              </div>
+            </div>
+
+            <ul class="score-list">
+              <li>
+                <span>Design</span>
+                <strong>9.7</strong>
+              </li>
+              <li>
+                <span>Performance</span>
+                <strong>9.6</strong>
+              </li>
+              <li>
+                <span>Ease of use</span>
+                <strong>9.2</strong>
+              </li>
+              <li>
+                <span>Value</span>
+                <strong>9.5</strong>
+              </li>
+            </ul>
+          </aside>
+        </section>
+
+        <section class="comparison-section">
+          <div class="section-heading">
+            <p class="eyebrow">At a glance</p>
+            <h2>Pros, cons, and final verdict</h2>
+          </div>
+
+          <div class="comparison-grid">
+            <article class="panel pros-panel">
+              <h3>Pros</h3>
+              <ul>
+                <li>Beautiful, modern aesthetic</li>
+                <li>Intuitive controls and easy setup</li>
+                <li>Strong battery and responsive system</li>
+                <li>Flexible for daily and advanced use</li>
+              </ul>
+            </article>
+
+            <article class="panel cons-panel">
+              <h3>Cons</h3>
+              <ul>
+                <li>App could use more customization</li>
+                <li>Accessories add extra cost</li>
+                <li>Some advanced features need a learning curve</li>
+              </ul>
+            </article>
+
+            <article class="panel verdict-panel">
+              <h3>Final verdict</h3>
+              <p>
+                This is one of the most complete choices in its category. If you
+                want a product that feels polished, reliable, and genuinely
+                useful, this review is a clear recommendation.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="testimonial-section" id="reviews">
+          <div class="section-heading">
+            <p class="eyebrow">Customer feedback</p>
+            <h2>What people are saying</h2>
+          </div>
+
+          <div class="testimonial-grid">
+            <article class="panel testimonial-card">
+              <div class="stars" aria-label="5 stars">★★★★★</div>
+              <p>
+                “It looks sleek and feels even better in use. The setup was
+                surprisingly quick and the battery lasted all week.”
+              </p>
+              <footer>
+                <strong>Maria L.</strong>
+                <span>Verified buyer</span>
+              </footer>
+            </article>
+
+            <article class="panel testimonial-card">
+              <div class="stars" aria-label="5 stars">★★★★★</div>
+              <p>
+                “I wanted something simple, and this delivered exactly that. It
+                works well at home and does not feel overbuilt.”
+              </p>
+              <footer>
+                <strong>Daniel R.</strong>
+                <span>Home user</span>
+              </footer>
+            </article>
+
+            <article class="panel testimonial-card">
+              <div class="stars" aria-label="4 stars">★★★★☆</div>
+              <p>
+                “A strong option overall. Some features take time to discover,
+                but the product quality makes up for the learning curve.”
+              </p>
+              <footer>
+                <strong>Sophia K.</strong>
+                <span>Tech reviewer</span>
+              </footer>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

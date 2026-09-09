@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="prima.css">
+    <title>Kafe</title>
+</head>
+
+<body>
+    <!--Header/Navbar-->
+    <header>
+        <nav class="navbar section-content">
+            <a href="#" class="nav-logo">
+                <h2 class="logo-text">&#9749; Kafe</h2>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Shtepi</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">Rreth</a></li>
+                <li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
+                <li class="nav-item"><a href="#safety" class="nav-link">Siguria</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Kontakt</a></li>
+                <li class="nav-item"><button class="nav-link admin-link" id="adminOpen" type="button">Hyrje admin</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section" id="home">
+            <div class="section-content hero-content">
+                <div class="hero-details">
+                    <h2 class="title">Kafeja Me E Mire</h2>
+                    <h3 class="subtitle">Beje diten tende speciale me kafen tende</h3>
+                    <p class="description">
+                        Pershendetje tek kafeja jon, ku cdo frut tregon nje histori dhe filxhani te shijon.
+                    </p>
+                    <div class="buttons">
+                        <a href="#" class="button order-new">Porosit Tani</a>
+                        <a href="#" class="button contact-us">Na Kontakto</a>
+                    </div>
+                </div>
+
+                <div class="hero-image-wrapper">
+                    <img src="coffee.png" alt="Coffee cup" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section" id="about">
+            <div class="section-content info-grid">
+                <div class="section-heading">
+                    <p class="section-kicker">Rreth nesh</p>
+                    <h2>Një filxhan i mirë, një moment më i mirë.</h2>
+                </div>
+                <p class="section-copy">Kafeja jonë përgatitet me kokrra të zgjedhura dhe shumë kujdes. Këtu mund të pushosh, të takosh njerëzit e tu dhe ta nisësh ditën me shijen që meriton.</p>
+            </div>
+        </section>
+
+        <section class="menu-section" id="menu">
+            <div class="section-content">
+                <div class="section-heading centered-heading">
+                    <p class="section-kicker">Menuja jonë</p>
+                    <h2>Zgjidh shijen tënde</h2>
+                </div>
+                <div class="menu-grid">
+                    <article class="menu-card"><span class="menu-icon">☕</span><h3>Espresso</h3><p>Kafe e fortë dhe aromatike.</p><strong>€1.50</strong></article>
+                    <article class="menu-card"><span class="menu-icon">◒</span><h3>Cappuccino</h3><p>Espresso, qumësht i ngrohtë dhe shkumë.</p><strong>€2.50</strong></article>
+                    <article class="menu-card"><span class="menu-icon">✦</span><h3>Mocha</h3><p>Një përzierje e butë me çokollatë.</p><strong>€3.00</strong></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="safety-section" id="safety">
+            <div class="section-content safety-content">
+                <div><p class="section-kicker">Siguria dhe cilësia</p><h2>Gjithmonë të freskëta. Gjithmonë me kujdes.</h2></div>
+                <p>Ne kujdesemi për çdo detaj, nga zgjedhja e kokrrave deri te shërbimi në filxhanin tuaj.</p>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="section-content contact-content">
+                <div class="section-heading"><p class="section-kicker">Na kontakto</p><h2>Ejani për një kafe.</h2><p>Na gjeni çdo ditë në qendër të qytetit.</p></div>
+                <form class="contact-form" id="contactForm">
+                    <label for="contactName">Emri</label>
+                    <input id="contactName" name="name" type="text" placeholder="Emri juaj" required>
+                    <label for="contactEmail">Email</label>
+                    <input id="contactEmail" name="email" type="email" placeholder="email@shembull.com" required>
+                    <label for="contactMessage">Mesazhi</label>
+                    <textarea id="contactMessage" name="message" rows="4" placeholder="Si mund t'ju ndihmojmë?" required></textarea>
+                    <button class="button order-new" type="submit">Dërgo mesazhin</button>
+                    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+    <div class="admin-modal" id="adminModal" aria-hidden="true">
+        <div class="admin-dialog" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+            <button class="modal-close" id="adminClose" type="button" aria-label="Mbyll">&times;</button>
+            <p class="section-kicker">Paneli i dyqanit</p>
+            <h2 id="adminTitle">Hyrje për administrim</h2>
+            <p class="admin-copy">Menaxhoni menunë, porositë dhe informacionin e kafenesë.</p>
+            <form class="admin-form" id="adminForm">
+                <label for="adminEmail">Email</label>
+                <input id="adminEmail" type="email" placeholder="admin@kafeja.al" required>
+                <label for="adminPassword">Fjalëkalimi</label>
+                <input id="adminPassword" type="password" placeholder="Shkruani fjalëkalimin" required>
+                <button class="button order-new" type="submit">Hyr në panel</button>
+                <p class="form-status" id="adminStatus" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
+    <script src="prima.js"></script>
+</body>
+
+</html>

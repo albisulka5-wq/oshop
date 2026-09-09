@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>  
+        :root{
+            --bg: #87d8c2 ;
+            --jeshil:#009900;
+            --kuq: #e70001;
+            --far:#420200;
+        }
+        body{
+            background-color: var(--bg);
+        }
+        .shalqi{
+            position:absolute ;
+            height: 500px;
+            width: 500px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .prit-1{
+            position: absolute;
+            height: 100px;
+            width: 200px;
+            left: 30%;
+            top: 40%;
+            border-radius: 50%;
+            transform: rotate(45deg);
+            background-color: var(--kuq);
+
+        }
+        .prit-1::after{
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top:-15% ;
+            border-bottom: 60px solid var(--jeshil);
+            border-bottom-left-radius:100px ;
+            border-bottom-right-radius: 100px;
+        }
+        .far1,.far2,.far3,.far4,.far5{
+            height: 10px;
+            width: 10px;
+            border-bottom-right-radius:100px ;
+            border-bottom-left-radius: 100px;
+            background-color: var(--far);
+        }
+        .far1{
+            position:absolute ;
+            left: 45%;
+            top: 40%;
+        }
+        .far2{
+            position:absolute ;
+            left: 50%;
+            top: 40%;
+        }
+        .far3{
+            position:absolute ;
+            left: 45%;
+            top: 45%;
+        }
+        .far4{
+            position:absolute ;
+            left: 40%;
+            top: 35%;
+        }
+        .far5{
+            position:absolute ;
+            left: 40%;
+            top: 45%;
+        }
+         .prit-2{
+            position: absolute;
+            height: 100px;
+            width: 200px;
+            left: 30%;
+            top: 40%;
+            border-radius: 50%;
+            transform: rotate(-130deg);
+            background-color: var(--jeshil);
+            animation: prit 5s ease-in-out infinite;
+         }
+         .prit-2::after{
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top:-15% ;
+            border-bottom: 60px solid var(--jeshil);
+            border-bottom-left-radius:100px ;
+            border-bottom-right-radius: 100px;
+        }
+    @keyframes prit {
+        from{
+            left:30% ;
+            top: 40%;
+        }
+        to {
+            left:45% ;
+            top: 50%;
+        }
+    }
+   /*     body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            overflow:hidden;
+        }
+        .mbajtes{
+            font-size: 10px;
+            width:40em ;
+            height: 40em;
+            position: relative;
+        }
+        .djell{
+            position: absolute;
+            top: 15em;
+            left: 15em;
+            width: 10em;
+            height: 10em;
+            background-color: yellow;
+            border-radius:50%;
+            box-shadow:0 0 3em white;
+        }
+        .tok, .hene{
+            position: absolute;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+            border-width: 0.1em 0.1em 0 0;
+            border-radius: 50%;
+        }
+        .tok{
+            top: 5em;
+            left: 5em;
+            height: 30em;
+            width: 30em;
+            animation: orbit 36.7s linear  infinite ;
+        }
+        .hene{
+            top: 0;
+            right: 0;
+            width: 8em;
+            height: 8em;
+            animation: orbit 2.7s linear infinite;
+        }
+        .tok::before,
+        .hene::before{
+            content:'';
+            position: absolute;
+            border-radius: 50%;
+        }
+        .tok::before{
+            top: 2.8em;
+            right: 2.8em;
+            width: 3em;
+            height: 3em;
+            background-color: aqua;
+        }
+        .hene::before{
+            top: 0.8em;
+            right: 0.2em;
+            width: 1.2em;
+            height: 1.2em;
+            background-color: silver;
+        }
+    @keyframes orbit {
+        to {
+            transform: rotate(360deg);
+        }
+    }*/
+   /* .heard{
+        position: absolute;
+        width: 1000px;
+        height: 90px;
+    }
+    .heard::before,
+    .heard::after{
+        position: absolute;
+        content:'';
+        left: 50px;
+        top: 0;
+        width: 50px;
+        height: 80px;
+        background: red;
+        border-radius: 50px 50px 0 0;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+    }
+    .heard::after{
+        left:0 ;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+    }
+    *{
+        box-sizing: border-box;
+
+    }
+
+    body{
+        --gap:calc(1rem + 0.125vw);
+        margin: 0;
+        block-size: 100dvh;
+    }
+    .grid-content{
+        block-size: 100%;
+        padding: var(--gap);
+        display: grid;
+        grid-template-columns:repeat(3, 1fr) ;
+        gap: var(--gap);
+    }
+    .grid-item{
+        background-image: url(https://masterpiecer-images.s3.yandex.net/dc7df2198e9411eeb1f33a7ca4cc1bdc:upscaled);
+        background-size: cover;
+        background-attachment: fixed;
+        &:nth-of-type(2){
+            grid-column: 2 / 4;
+        }
+         &:nth-of-type(6){
+            grid-column: 1 / 3;
+        }
+         &:nth-of-type(9){
+            grid-column: 3 / 4;
+            grid-row: 3 / 5;
+        }
+    }*/
+   .hologram-mbajtes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+   }
+   .hologram-karte{
+    width: 300px;
+    height: 200px;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+   }
+   .hologram-karte h2{
+    color: #0ff;
+    font-size: 2rem;
+    position: relative;
+    z-index: 2;
+   }
+   .hologram-karte::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(0deg,transparent,transparent 30%,rgba(0,255,255,0.3));
+    transform: rotate(-45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+   }
+   .hologram-karte:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255,255,0.5);
+   }
+   .hologram-karte:hover::before{
+    opacity: 1;
+    transform: rotate(-45deg)translate(300%);
+   }
+   .leng-mbajtes{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #001;
+   }
+   .leng-element{
+    width: 250px;
+    height: 100px;
+    background: #0a2342;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+   }
+   .leng-element span{
+    color: #fff;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 2;
+   }
+   .leng-element::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(#0ff 0deg, #0a2342 120deg,#0ff 240deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+    transform: scale(0);
+   }
+   .leng-element:hover{
+    border-radius: 10px;
+    transform: rotate(15deg);
+   }
+   .leng-element:hover::before{
+    opacity: 0.5;
+    transform: scale(2);
+   }
+   .praktik-mbajtes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+   }
+   .praktik-element{
+    width: 300px;
+    height: 200px;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+   }
+   .praktik-element h2{
+    color: #0ff;
+    font-size: 2rem;
+    position: relative;
+    z-index: 2;
+    transition: all 0.5s ease;
+   }
+   .praktik-element::before,.praktik-element::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-radial-gradient(
+    circle at center,#0ff 1px,transparent 2px,
+    transparent 50px);
+    opacity: 0;
+    transition: all 0.5s ease;
+   }
+   .praktik-element:hover h2{
+    transform: scale(1.5) rotate(360deg);
+    opacity: 0;
+   }
+   .praktik-element:hover::before{
+    transform: scale(2)rotate(45deg);
+    opacity: 0.3;
+   }
+   .praktik-element:hover::after{
+    transform: scale(2)rotate(-45deg);
+    opacity: 0.3;
+   }
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 100vh;
+    background: #ccffff;
+}
+
+.side-nav {
+    width: 250px;
+    height: 100%;
+    background: #0ff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 30px;
+}
+
+.logo {
+    display: block;
+    margin-bottom: 130px;
+}
+
+.logo-img {
+    width: 170px;
+    margin-top: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    position: relative;
+}
+
+.nav-links li {
+    padding: 10px 0;
+}
+
+.nav-links li a {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li a i {
+    font-size: 22px;
+    margin-right: 20px;
+}
+
+.active {
+    background: #000000;
+    width: 100%;
+    height: 47px;
+    position: absolute;
+    left: 0;
+    top: 2.6%;
+    z-index: -1;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.4);
+    display: none;
+    transition: top 0.5s;
+}
+
+.nav-links li:hover a {
+    color: #fff;
+    transition: 0.3s;
+}
+
+.nav-links li:hover~.active {
+    display: block;
+}
+
+.nav-links li:nth-child(1):hover~.active {
+    top: 2.6%;
+}
+
+.nav-links li:nth-child(2):hover~.active {
+    top: 19.2%;
+}
+
+.nav-links li:nth-child(3):hover~.active {
+    top: 35.8%;
+}
+
+.nav-links li:nth-child(4):hover~.active {
+    top: 52.4%;
+}
+
+.nav-links li:nth-child(5):hover~.active {
+    top: 69%;
+}
+
+.nav-links li:nth-child(6):hover~.active {
+    top: 85.6%;
+}
+   </style>
+</head>
+<body>
+     <div class="header">
+        <div class="side-nav">
+            <a href="#" class="logo">
+                <img src="https://masterpiecer-images.s3.yandex.net/dc7df2198e9411eeb1f33a7ca4cc1bdc:upscaled" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#">
+                        <i class="fa-solid fa-house-user"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li><a href="#">
+                        <i class="fa-solid fa-comment-dots"></i>
+                        <p>Message</p>
+                    </a>
+                </li>
+                <li><a href="#">
+                        <i class="fa-solid fa-user"></i>
+                        <p>users</p>
+                    </a>
+                </li>
+                <li><a href="#">
+                        <i class="fa-solid fa-box-open"></i>
+                        <p>Rewards</p>
+                    </a>
+                </li>
+                <li><a href="#">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <p>Report</p>
+                    </a>
+                </li>
+                <li><a href="#">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        <p>Setting</p>
+                    </a>
+                </li>
+                <div class="active"></div>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <div class="hologram-mbajtes">
+        <div class="hologram-karte">
+            <h2>Hologram</h2>
+        </div>
+    </div>   
+    <br>
+    <div class="leng-mbajtes">
+        <div class="leng-element"><span>Transform</span></div>
+    </div>
+    <br>
+    <div class="praktik-mbajtes">
+    <div class="praktik-element">
+      <h2>EXPLODE</h2>
+    </div>
+  </div>
+   <!-- <div class="shalqi">
+        <div class="prit-1"></div>
+        <div class="far1"></div>
+        <div class="far2"></div>
+        <div class="far3"></div>
+        <div class="far4"></div>
+        <div class="far5"></div>
+        <div class="prit-2"></div>
+    </div>-->
+    <!--<div class="heard"></div>
+    <div class="grid-content">
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+    </div>-->
+    <!--<div class="mbajtes">
+        <div class="djell"></div>
+            <div class="tok">
+                <div class="hene"></div>
+            </div>
+        </div>-->
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Të gjitha etiketat</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        background: radial-gradient(circle at top center, rgba(59, 130, 246, 0.25), transparent 25%),
+          radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.12), transparent 18%),
+          linear-gradient(180deg, #091626 0%, #0f172a 48%, #1d4ed8 100%);
+      }
+
+      .tags-page {
+        width: min(100%, 1024px);
+        padding: 2rem;
+        border-radius: 32px;
+        background: rgba(15, 23, 42, 0.96);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 28px 80px rgba(15, 23, 42, 0.28);
+      }
+
+      .tags-page h1 {
+        margin: 0 0 0.75rem;
+        font-size: clamp(2rem, 2.5vw, 2.75rem);
+      }
+
+      .tags-page p {
+        margin: 0 0 1.75rem;
+        color: #cbd5e1;
+        line-height: 1.7;
+      }
+
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+      }
+
+      .tag-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.07);
+        color: #e2e8f0;
+        font-weight: 700;
+        cursor: default;
+        transition: transform 0.2s ease, background 0.2s ease;
+      }
+      .tag-chip:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.14);
+      }
+      .move-buttons {
+        display: inline-flex;
+        gap: 0.35rem;
+      }
+      .move-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2rem;
+        height: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        color: #e2e8f0;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+      .move-button:hover {
+        background: rgba(255, 255, 255, 0.18);
+        transform: translateY(-1px);
+      }
+      .detail-move-controls {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+      }
+      .detail-move-controls .move-button {
+        width: auto;
+        min-width: 0;
+        padding: 0.4rem 0.65rem;
+        border-radius: 16px;
+      }
+
+      .html5-elements {
+        margin-top: 2rem;
+      }
+
+      .html5-elements h2 {
+        margin-bottom: 1rem;
+        color: #f8fafc;
+      }
+
+      .html5-elements p {
+        margin: 0 0 1rem;
+        color: #cbd5e1;
+      }
+
+      .html5-category {
+        margin-bottom: 1.75rem;
+      }
+
+      .html5-category h3 {
+        margin: 0 0 0.5rem;
+        color: #93c5fd;
+        font-size: 1.1rem;
+      }
+
+      .html5-category p {
+        margin: 0 0 1rem;
+        color: #cbd5e1;
+      }
+
+      .html5-example-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1rem;
+      }
+
+      .html5-example-list details {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 22px;
+        padding: 1rem;
+      }
+
+      .html5-example-list summary {
+        cursor: pointer;
+        font-weight: 700;
+        color: #e2e8f0;
+        list-style: none;
+        margin-bottom: 0.65rem;
+      }
+
+      .html5-example-list summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .html5-example-list pre {
+        margin: 0 0 0.75rem;
+        padding: 0.85rem;
+        background: rgba(15, 23, 42, 0.9);
+        border-radius: 16px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      .html5-example-list code {
+        color: #cbd5e1;
+        font-size: 0.95rem;
+      }
+
+      .element-description {
+        margin: 0;
+        color: #cbd5e1;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 900px) {
+        .html5-example-list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .tags-page {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+</head>
+<body>
+  <main class="tags-page">
+    <header>
+      <h1>Të gjitha etiketat</h1>
+      <p>Këtu janë të gjitha etiketat dhe kategoritë e disponueshme nga faqja e dyqaneve dhe publikimeve.</p>
+    </header>
+
+    <div class="tag-list">
+      <span class="tag-chip">Moda / Fashion</span>
+      <span class="tag-chip">Elektro / Electronics</span>
+      <span class="tag-chip">Market / Grocery</span>
+      <span class="tag-chip">Shtëpi / Home goods</span>
+      <span class="tag-chip">Librat / Books</span>
+      <span class="tag-chip">Bukuri / Beauty</span>
+      <span class="tag-chip">Sport / Sports</span>
+      <span class="tag-chip">Zyrë / Office</span>
+      <span class="tag-chip">Reklamë / Advertising</span>
+    </div>
+
+    <section class="html5-elements">
+      <h2>HTML5 Elements</h2>
+      <p>Reference list of HTML5 elements organized by role, with example usage and a short description for each category.</p>
+
+      <div class="html5-category">
+        <h3>Document metadata</h3>
+        <p>These elements belong in the head and define document settings, resources, or scripts.</p>
+        <div class="html5-example-list">
+          <details><summary>&lt;html&gt;</summary><pre><code>&lt;html lang="en"&gt;...&lt;/html&gt;</code></pre><p class="element-description">The root element for an HTML document; the lang attribute sets the document language. <strong>Best use case:</strong> Use as the root element of every HTML document to declare the document type and language.</p></details>
+          <details><summary>&lt;head&gt;</summary><pre><code>&lt;head&gt;&lt;title&gt;My Page&lt;/title&gt;&lt;/head&gt;</code></pre><p class="element-description">Contains metadata, links to styles, scripts, and other information for the browser. <strong>Best use case:</strong> Use to group metadata, links, and scripts needed by the browser before rendering content.</p></details>
+          <details><summary>&lt;title&gt;</summary><pre><code>&lt;title&gt;My Title&lt;/title&gt;</code></pre><p class="element-description">Specifies the document title shown in the browser tab or search results. <strong>Best use case:</strong> Use to set the page title that appears in browser tabs and search engine results.</p></details>
+          <details><summary>&lt;base&gt;</summary><pre><code>&lt;base href="/docs/"&gt;</code></pre><p class="element-description">Defines the base URL for all relative URLs in the document. <strong>Best use case:</strong> Use when you need a common base URL for all relative links across the page.</p></details>
+          <details><summary>&lt;link&gt;</summary><pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre><p class="element-description">Links external resources such as stylesheets or icons to the document. <strong>Best use case:</strong> Use to attach external stylesheets, fonts, or icons to the page.</p></details>
+          <details><summary>&lt;meta&gt;</summary><pre><code>&lt;meta charset="UTF-8"&gt;</code></pre><p class="element-description">Provides metadata about the document, like character encoding or viewport settings. <strong>Best use case:</strong> Use to provide document metadata such as charset, viewport, or SEO information.</p></details>
+          <details><summary>&lt;style&gt;</summary><pre><code>&lt;style&gt;body{margin:0}&lt;/style&gt;</code></pre><p class="element-description">Contains CSS rules directly inside the HTML document. <strong>Best use case:</strong> Use for small amounts of page-specific CSS inside the document.</p></details>
+          <details><summary>&lt;script&gt;</summary><pre><code>&lt;script&gt;console.log('Hi')&lt;/script&gt;</code></pre><p class="element-description">Includes or references JavaScript code used by the page. <strong>Best use case:</strong> Use to add or load JavaScript behavior and interactivity.</p></details>
+          <details><summary>&lt;noscript&gt;</summary><pre><code>&lt;noscript&gt;Enable JavaScript.&lt;/noscript&gt;</code></pre><p class="element-description">Displays content when JavaScript is disabled in the browser. <strong>Best use case:</strong> Use to show fallback content when JavaScript is disabled.</p></details>
+          <details><summary>&lt;template&gt;</summary><pre><code>&lt;template&gt;&lt;div&gt;Card&lt;/div&gt;&lt;/template&gt;</code></pre><p class="element-description">Holds HTML markup for cloning and reusing later with JavaScript. <strong>Best use case:</strong> Use to define HTML fragments that are cloned and inserted by JavaScript.</p></details>
+          <details><summary>&lt;slot&gt;</summary><pre><code>&lt;slot name="title"&gt;&lt;/slot&gt;</code></pre><p class="element-description">Defines a placeholder inside a web component for projected content. <strong>Best use case:</strong> Use inside web components to mark where user-provided content is inserted.</p></details>
+        </div>
+      </div>
+
+      <div class="html5-category">
+        <h3>Content sectioning</h3>
+        <p>Use these elements to structure content into sections, navigation, and page regions.</p>
+        <div class="html5-example-list">
+          <details><summary>&lt;body&gt;</summary><pre><code>&lt;body&gt;Page content&lt;/body&gt;</code></pre><p class="element-description">Contains all visible page content and interactive elements. <strong>Best use case:</strong> Use to wrap all visible page content and interface elements.</p></details>
+          <details><summary>&lt;section&gt;</summary><pre><code>&lt;section&gt;&lt;h2&gt;Intro&lt;/h2&gt;&lt;/section&gt;</code></pre><p class="element-description">Defines a thematic grouping of content with its own heading. <strong>Best use case:</strong> Use to group related content into a semantic section with its own heading.</p></details>
+          <details><summary>&lt;nav&gt;</summary><pre><code>&lt;nav&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/nav&gt;</code></pre><p class="element-description">Represents a navigation block with links to sections of the site. <strong>Best use case:</strong> Use to wrap main navigation links or menus for the page.</p></details>
+          <details><summary>&lt;article&gt;</summary><pre><code>&lt;article&gt;&lt;h2&gt;News&lt;/h2&gt;&lt;/article&gt;</code></pre><p class="element-description">Represents an independent, self-contained piece of content. <strong>Best use case:</strong> Use for self-contained content that could be distributed independently.</p></details>
+          <details><summary>&lt;aside&gt;</summary><pre><code>&lt;aside&gt;Sidebar info&lt;/aside&gt;</code></pre><p class="element-description">Holds related content such as sidebars, pull quotes, or complementary info. <strong>Best use case:</strong> Use for content related to the main text, like sidebars or notes.</p></details>
+          <details><summary>&lt;header&gt;</summary><pre><code>&lt;header&gt;&lt;h1&gt;Title&lt;/h1&gt;&lt;/header&gt;</code></pre><p class="element-description">Represents introductory content or navigation controls for a section. <strong>Best use case:</strong> Use for introductory content or controls at the top of a section.</p></details>
+          <details><summary>&lt;footer&gt;</summary><pre><code>&lt;footer&gt;Site footer&lt;/footer&gt;</code></pre><p class="element-description">Contains footer content like copyrights, links, or author info. <strong>Best use case:</strong> Use for closing content such as credits, links, or legal text.</p></details>
+          <details><summary>&lt;address&gt;</summary><pre><code>&lt;address&gt;Contact us&lt;/address&gt;</code></pre><p class="element-description">Contains contact information for the author or organization. <strong>Best use case:</strong> Use for author or site contact information in a footer or sidebar.</p></details>
+          <details><summary>&lt;main&gt;</summary><pre><code>&lt;main&gt;Main content&lt;/main&gt;</code></pre><p class="element-description">Designates the primary content area of the page. <strong>Best use case:</strong> Use to denote the document’s central content area for accessibility.</p></details>
+          <details><summary>&lt;div&gt;</summary><pre><code>&lt;div class="box"&gt;Box&lt;/div&gt;</code></pre><p class="element-description">A generic container used to group content without meaning. <strong>Best use case:</strong> Use as a generic container when no semantic element fits better.</p></details>
+        </div>
+      </div>
+
+      <div class="html5-category">
+        <h3>Text content</h3>
+        <p>These tags are used for paragraphs, headings, lists, quotes, and text formatting.</p>
+        <div class="html5-example-list">
+          <details><summary>&lt;h1&gt;– &lt;h6&gt;</summary><pre><code>&lt;h1&gt;Heading 1&lt;/h1&gt;&lt;h2&gt;Heading 2&lt;/h2&gt;</code></pre><p class="element-description">Define six levels of headings for page structure and accessibility. <strong>Best use case:</strong> Use to structure the document hierarchy with meaningful headings.</p></details>
+          <details><summary>&lt;p&gt;</summary><pre><code>&lt;p&gt;Paragraph text.&lt;/p&gt;</code></pre><p class="element-description">Wraps a block of text as a paragraph. <strong>Best use case:</strong> Use for paragraphs of text and natural language content.</p></details>
+          <details><summary>&lt;hr&gt;</summary><pre><code>&lt;hr&gt;</code></pre><p class="element-description">Inserts a thematic break between sections of content. <strong>Best use case:</strong> Use to separate sections visually or semantically on a page.</p></details>
+          <details><summary>&lt;br&gt;</summary><pre><code>Line one.&lt;br&gt;Line two.</code></pre><p class="element-description">Creates a line break within text content. <strong>Best use case:</strong> Use to break a line only in text where new lines are needed.</p></details>
+          <details><summary>&lt;pre&gt;</summary><pre><code>&lt;pre&gt;Preformatted text&lt;/pre&gt;</code></pre><p class="element-description">Preserves whitespace and line breaks exactly as written. <strong>Best use case:</strong> Use for code snippets or text that requires preserved whitespace.</p></details>
+          <details><summary>&lt;blockquote&gt;</summary><pre><code>&lt;blockquote&gt;Quote&lt;/blockquote&gt;</code></pre><p class="element-description">Displays a section quoted from another source. <strong>Best use case:</strong> Use for longer quotations from external sources.</p></details>
+          <details><summary>&lt;ol&gt;</summary><pre><code>&lt;ol&gt;&lt;li&gt;One&lt;/li&gt;&lt;/ol&gt;</code></pre><p class="element-description">Creates an ordered (numbered) list. <strong>Best use case:</strong> Use for ordered lists where sequence matters.</p></details>
+          <details><summary>&lt;ul&gt;</summary><pre><code>&lt;ul&gt;&lt;li&gt;One&lt;/li&gt;&lt;/ul&gt;</code></pre><p class="element-description">Creates an unordered (bullet) list. <strong>Best use case:</strong> Use for unordered lists of related items.</p></details>
+          <details><summary>&lt;li&gt;</summary><pre><code>&lt;li&gt;List item&lt;/li&gt;</code></pre><p class="element-description">Defines an item inside an ordered or unordered list. <strong>Best use case:</strong> Use for each item inside ordered or unordered lists.</p></details>
+          <details><summary>&lt;dl&gt;</summary><pre><code>&lt;dl&gt;&lt;dt&gt;Term&lt;/dt&gt;&lt;dd&gt;Definition&lt;/dd&gt;&lt;/dl&gt;</code></pre><p class="element-description">A description list of terms and details. <strong>Best use case:</strong> Use for term-definition pairs or property lists.</p></details>
+          <details><summary>&lt;dt&gt;</summary><pre><code>&lt;dt&gt;Term&lt;/dt&gt;</code></pre><p class="element-description">Defines a term in a description list. <strong>Best use case:</strong> Use for the term name in a description list.</p></details>
+          <details><summary>&lt;dd&gt;</summary><pre><code>&lt;dd&gt;Definition&lt;/dd&gt;</code></pre><p class="element-description">Provides the definition for a term. <strong>Best use case:</strong> Use for the definition or description of a term.</p></details>
+          <details><summary>&lt;figure&gt;</summary><pre><code>&lt;figure&gt;&lt;img src="img.jpg"&gt;&lt;figcaption&gt;Caption&lt;/figcaption&gt;&lt;/figure&gt;</code></pre><p class="element-description">Groups media content with a caption. <strong>Best use case:</strong> Use to group media with an optional caption.</p></details>
+          <details><summary>&lt;figcaption&gt;</summary><pre><code>&lt;figcaption&gt;Image caption&lt;/figcaption&gt;</code></pre><p class="element-description">Provides a caption for a figure element. <strong>Best use case:</strong> Use to describe or title the media contained in figure.</p></details>
+        </div>
+      </div>
+
+      <div class="html5-category">
+        <h3>Inline text semantics</h3>
+        <p>Use these elements to mark up text meaning, emphasis, and formatting.</p>
+        <div class="html5-example-list">
+          <details><summary>&lt;a&gt;</summary><pre><code>&lt;a href="https://example.com"&gt;Link&lt;/a&gt;</code></pre><p class="element-description">Creates a hyperlink to another resource. <strong>Best use case:</strong> Use to create links that navigate to other pages or resources.</p></details>
+          <details><summary>&lt;em&gt;</summary><pre><code>&lt;em&gt;Emphasized&lt;/em&gt;</code></pre><p class="element-description">Marks text with emphasis, usually rendered italic. <strong>Best use case:</strong> Use to emphasize text that should be read with stress.</p></details>
+          <details><summary>&lt;strong&gt;</summary><pre><code>&lt;strong&gt;Important&lt;/strong&gt;</code></pre><p class="element-description">Marks strongly important text, usually rendered bold. <strong>Best use case:</strong> Use to indicate strong importance or urgency in text.</p></details>
+          <details><summary>&lt;small&gt;</summary><pre><code>&lt;small&gt;Fine print&lt;/small&gt;</code></pre><p class="element-description">Represents side comments and fine print. <strong>Best use case:</strong> Use for fine print, disclaimers, or legal notes.</p></details>
+          <details><summary>&lt;s&gt;</summary><pre><code>&lt;s&gt;Strikethrough&lt;/s&gt;</code></pre><p class="element-description">Shows text that is no longer accurate or relevant. <strong>Best use case:</strong> Use to represent text that is no longer accurate or relevant.</p></details>
+          <details><summary>&lt;cite&gt;</summary><pre><code>&lt;cite&gt;Source name&lt;/cite&gt;</code></pre><p class="element-description">Represents a creative work title or reference. <strong>Best use case:</strong> Use to cite a creative work or reference source.</p></details>
+          <details><summary>&lt;q&gt;</summary><pre><code>&lt;q&gt;Short quote&lt;/q&gt;</code></pre><p class="element-description">Represents an inline quotation. <strong>Best use case:</strong> Use for short inline quotations within text.</p></details>
+          <details><summary>&lt;dfn&gt;</summary><pre><code>&lt;dfn&gt;HTML&lt;/dfn&gt; definition.</code></pre><p class="element-description">Marks the defining instance of a term. <strong>Best use case:</strong> Use to mark the first use of a term being defined.</p></details>
+          <details><summary>&lt;abbr&gt;</summary><pre><code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code></pre><p class="element-description">Represents an abbreviation or acronym. <strong>Best use case:</strong> Use to show an abbreviation or acronym with its full form.</p></details>
+          <details><summary>&lt;data&gt;</summary><pre><code>&lt;data value="42"&gt;Answer&lt;/data&gt;</code></pre><p class="element-description">Links a machine-readable value with human-readable text. <strong>Best use case:</strong> Use to attach machine-readable values to human-readable text.</p></details>
+          <details><summary>&lt;time&gt;</summary><pre><code>&lt;time datetime="2026-08-07"&gt;August 7, 2026&lt;/time&gt;</code></pre><p class="element-description">Represents a date or time value. <strong>Best use case:</strong> Use to mark dates or times in a machine-readable format.</p></details>
+          <details><summary>&lt;code&gt;</summary><pre><code>&lt;code&gt;const x = 3;&lt;/code&gt;</code></pre><p class="element-description">Represents a fragment of computer code. <strong>Best use case:</strong> Use for inline code fragments or programming text.</p></details>
+          <details><summary>&lt;var&gt;</summary><pre><code>&lt;var&gt;x&lt;/var&gt; value.</code></pre><p class="element-description">Represents a variable or placeholder. <strong>Best use case:</strong> Use to represent variables or placeholders in code examples.</p></details>
+          <details><summary>&lt;samp&gt;</summary><pre><code>&lt;samp&gt;Sample output&lt;/samp&gt;</code></pre><p class="element-description">Represents sample output from a program. <strong>Best use case:</strong> Use for sample output from a program or system.</p></details>
+          <details><summary>&lt;kbd&gt;</summary><pre><code>&lt;kbd&gt;Ctrl+C&lt;/kbd&gt;</code></pre><p class="element-description">Represents user input from a keyboard, voice, or other device. <strong>Best use case:</strong> Use to represent user input like keys or commands.</p></details>
+          <details><summary>&lt;sub&gt;</summary><pre><code>H&lt;sub&gt;2&lt;/sub&gt;O</code></pre><p class="element-description">Displays text as subscript. <strong>Best use case:</strong> Use for scientific notation or chemical formulas.</p></details>
+          <details><summary>&lt;sup&gt;</summary><pre><code>10&lt;sup&gt;2&lt;/sup&gt;</code></pre><p class="element-description">Displays text as superscript. <strong>Best use case:</strong> Use for exponents or footnote markers.</p></details>
+          <details><summary>&lt;i&gt;</summary><pre><code>&lt;i&gt;Italic text&lt;/i&gt;</code></pre><p class="element-description">Represents text in an alternate voice or mood. <strong>Best use case:</strong> Use for terms in an alternate voice or technical text.</p></details>
+          <details><summary>&lt;b&gt;</summary><pre><code>&lt;b&gt;Bold text&lt;/b&gt;</code></pre><p class="element-description">Represents text without added importance or emphasis. <strong>Best use case:</strong> Use for stylistic text without additional importance.</p></details>
+          <details><summary>&lt;u&gt;</summary><pre><code>&lt;u&gt;Underline&lt;/u&gt;</code></pre><p class="element-description">Represents a text span with an unarticulated, non-textual annotation. <strong>Best use case:</strong> Use to underline text for non-semantic annotations.</p></details>
+          <details><summary>&lt;mark&gt;</summary><pre><code>&lt;mark&gt;Highlighted&lt;/mark&gt;</code></pre><p class="element-description">Highlights text for reference or emphasis. <strong>Best use case:</strong> Use to highlight text of special relevance.</p></details>
+          <details><summary>&lt;bdi&gt;</summary><pre><code>&lt;bdi&gt;RTL text&lt;/bdi&gt;</code></pre><p class="element-description">Isolates text direction to support bidirectional text. <strong>Best use case:</strong> Use to isolate bidirectional text in mixed-language content.</p></details>
+          <details><summary>&lt;bdo&gt;</summary><pre><code>&lt;bdo dir="rtl"&gt;Right-to-left&lt;/bdo&gt;</code></pre><p class="element-description">Overrides the current text direction. <strong>Best use case:</strong> Use to explicitly override text direction.</p></details>
+          <details><summary>&lt;span&gt;</summary><pre><code>&lt;span class="label"&gt;Tag&lt;/span&gt;</code></pre><p class="element-description">A generic inline container for styling or scripting. <strong>Best use case:</strong> Use as an inline wrapper for styling or scripting parts of text.</p></details>
+          <details><summary>&lt;wbr&gt;</summary><pre><code>LongWord&lt;wbr&gt;Break</code></pre><p class="element-description">Suggests a line break opportunity within long text. <strong>Best use case:</strong> Use to suggest a line break point in long words.</p></details>
+          <details><summary>&lt;ins&gt;</summary><pre><code>&lt;ins&gt;Added text&lt;/ins&gt;</code></pre><p class="element-description">Represents inserted text, often used in revisions. <strong>Best use case:</strong> Use to mark inserted text in revision histories.</p></details>
+          <details><summary>&lt;del&gt;</summary><pre><code>&lt;del&gt;Removed text&lt;/del&gt;</code></pre><p class="element-description">Represents deleted text from a document. <strong>Best use case:</strong> Use to mark deleted text in revisions or updates.</p></details>
+        </div>
+      </div>
+
+      <div class="html5-category">
+        <h3>Embedded content</h3>
+        <p>Elements used to embed images, media, graphics, or interactive content.</p>
+        <div class="html5-example-list">
+          <details><summary>&lt;picture&gt;</summary><pre><code>&lt;picture&gt;&lt;source srcset="image.webp" type="image/webp"&gt;&lt;img src="image.jpg" alt="Photo"&gt;&lt;/picture&gt;</code></pre><p class="element-description">Provides responsive image sources for different resolutions or formats. <strong>Best use case:</strong> Use for responsive images with multiple source formats.</p></details>
+          <details><summary>&lt;source&gt;</summary><pre><code>&lt;source srcset="image.webp" type="image/webp"&gt;</code></pre><p class="element-description">Specifies media resources for picture, audio, or video elements. <strong>Best use case:</strong> Use to provide different media sources for picture/audio/video.</p></details>
+          <details><summary>&lt;img&gt;</summary><pre><code>&lt;img src="photo.jpg" alt="Photo"&gt;</code></pre><p class="element-description">Displays an image in the document. <strong>Best use case:</strong> Use to embed images with meaningful alt text for accessibility.</p></details>
+          <details><summary>&lt;iframe&gt;</summary><pre><code>&lt;iframe src="https://example.com"&gt;&lt;/iframe&gt;</code></pre><p class="element-description">Embeds another webpage or content within the current page. <strong>Best use case:</strong> Use to embed full webpages or external widgets securely.</p></details>
+          <details><summary>&lt;embed&gt;</summary><pre><code>&lt;embed src="file.pdf" type="application/pdf"&gt;</code></pre><p class="element-description">Embeds external content like PDFs or multimedia players. <strong>Best use case:</strong> Use to embed external resources like PDFs or plugins.</p></details>
+          <details><summary>&lt;object&gt;</summary><pre><code>&lt;object data="file.pdf" type="application/pdf"&gt;&lt;/object&gt;</code></pre><p class="element-description">Embeds a resource and can include fallback content. <strong>Best use case:</strong> Use to embed content with fallback HTML inside the tag.</p></details>
+          <details><summary>&lt;param&gt;</summary><pre><code>&lt;object data="movie.swf"&gt;&lt;param name="autoplay" value="true"&gt;&lt;/object&gt;</code></pre><p class="element-description">Defines parameters for embedded objects. <strong>Best use case:</strong> Use with object to pass parameters to the embedded resource.</p></details>
+          <details><summary>&lt;video&gt;</summary><pre><code>&lt;video controls&gt;&lt;source src="video.mp4" type="video/mp4"&gt;&lt;/video&gt;</code></pre><p class="element-description">Embeds a video player with optional controls. <strong>Best use case:</strong> Use to include video playback with native controls.</p></details>
+          <details><summary>&lt;audio&gt;</summary><pre><code>&lt;audio controls&gt;&lt;source src="audio.mp3" type="audio/mpeg"&gt;&lt;/audio&gt;</code></pre><p class="element-description">Embeds audio with playback controls. <strong>Best use case:</strong> Use to include audio playback, music, or podcasts.</p></details>
+          <details><summary>&lt;track&gt;</summary><pre><code>&lt;video controls&gt;&lt;track kind="captions" src="captions.vtt" srclang="en"&gt;&lt;/video&gt;</code></pre><p class="element-description">Defines timed text tracks for media elements. <strong>Best use case:</strong> Use to add captions or subtitles to video/audio media.</p></details>
+          <details><summary>&lt;map&gt;</summary><pre><code>&lt;map name="map1"&gt;&lt;area shape="rect" coords="0,0,100,100" href="#"&gt;&lt;/map&gt;</code></pre><p class="element-description">Defines an image map with clickable areas. <strong>Best use case:</strong> Use to define an image map with clickable regions.</p></details>
+          <details><summary>&lt;area&gt;</summary><pre><code>&lt;area shape="rect" coords="0,0,100,100" href="#"&gt;</code></pre><p class="element-description">Defines a clickable region within an image map. <strong>Best use case:</strong> Use to declare active regions within an image map.</p></details>
+          <details><summary>&lt;canvas&gt;</summary><pre><code>&lt;canvas width="300" height="150"&gt;&lt;/canvas&gt;</code></pre><p class="element-description">Creates a drawing surface for graphics rendered with JavaScript. <strong>Best use case:</strong> Use for dynamic graphics and animations with JavaScript.</p></details>
+          <details><summary>&lt;svg&gt;</summary><pre><code>&lt;svg width="100" height="100"&gt;&lt;circle cx="50" cy="50" r="40"/&gt;&lt;/svg&gt;</code></pre><p class="element-description">Defines scalable vector graphics directly in HTML. <strong>Best use case:</strong> Use for scalable vector graphics and icons.</p></details>
+          <details><summary>&lt;math&gt;</summary><pre><code>&lt;math&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/math&gt;</code></pre><p class="element-description">Represents mathematical notation and formulas. <strong>Best use case:</strong> Use for mathematical expressions in web content.</p></details>
+        </div>
+      </div>
+
+      <div class="html5-category">
+        <h3>Tables</h3>
+        <p>These elements define table structure and data organization.</p>
+        <div class="html5-example-list">
+          <details><summary>&lt;table&gt;</summary><pre><code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;Cell&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></pre><p class="element-description">Creates a table for tabular data. <strong>Best use case:</strong> Use for tabular data, schedules, or comparison grids.</p></details>
+          <details><summary>&lt;caption&gt;</summary><pre><code>&lt;caption&gt;Table title&lt;/caption&gt;</code></pre><p class="element-description">Provides a title for a table. <strong>Best use case:</strong> Use to describe the content of a table.</p></details>
+          <details><summary>&lt;colgroup&gt;</summary><pre><code>&lt;colgroup&gt;&lt;col span="2"&gt;&lt;/colgroup&gt;</code></pre><p class="element-description">Groups table columns for styling or structure. <strong>Best use case:</strong> Use to group table columns for styling or width control.</p></details>
+          <details><summary>&lt;col&gt;</summary><pre><code>&lt;col span="2"&gt;</code></pre><p class="element-description">Defines column properties within a table. <strong>Best use case:</strong> Use to set properties on one or more table columns.</p></details>
+          <details><summary>&lt;tbody&gt;</summary><pre><code>&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Body&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;</code></pre><p class="element-description">Contains the main body rows of a table. <strong>Best use case:</strong> Use to group the main row content of a table.</p></details>
+          <details><summary>&lt;thead&gt;</summary><pre><code>&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Header&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;</code></pre><p class="element-description">Contains the header rows of a table. <strong>Best use case:</strong> Use to group the header row(s) of a table.</p></details>
+          <details><summary>&lt;tfoot&gt;</summary><pre><code>&lt;tfoot&gt;&lt;tr&gt;&lt;td&gt;Footer&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;</code></pre><p class="element-description">Contains footer rows such as summaries or totals. <strong>Best use case:</strong> Use to group footer rows like totals and summaries.</p></details>
+          <details><summary>&lt;tr&gt;</summary><pre><code>&lt;tr&gt;&lt;td&gt;Row&lt;/td&gt;&lt;/tr&gt;</code></pre><p class="element-description">Defines a row of cells in a table. <strong>Best use case:</strong> Use to define a row within a table section.</p></details>
+          <details><summary>&lt;td&gt;</summary><pre><code>&lt;td&gt;Cell&lt;/td&gt;</code></pre><p class="element-description">Defines a standard cell in a table row. <strong>Best use case:</strong> Use for normal data cells in table rows.</p></details>
+          <details><summary>&lt;th&gt;</summary><pre><code>&lt;th&gt;Header cell&lt;/th&gt;</code></pre><p class="element-description">Defines a header cell in a table row. <strong>Best use case:</strong> Use for header cells that label row or column data.</p></details>
+        </div>
+      </div>
+
+      <div class="html5-category">
+        <h3>Forms</h3>
+        <p>Form-related elements collect user input, present controls, and display results.</p>
+        <div class="html5-example-list">
+          <details><summary>&lt;form&gt;</summary><pre><code>&lt;form action="/submit" method="post"&gt;...&lt;/form&gt;</code></pre><p class="element-description">Wraps controls that collect and submit user input. <strong>Best use case:</strong> Use to collect user input and submit it to a server.</p></details>
+          <details><summary>&lt;fieldset&gt;</summary><pre><code>&lt;fieldset&gt;&lt;legend&gt;Info&lt;/legend&gt;&lt;/fieldset&gt;</code></pre><p class="element-description">Groups related controls in a form. <strong>Best use case:</strong> Use to group related form controls for clarity.</p></details>
+          <details><summary>&lt;legend&gt;</summary><pre><code>&lt;legend&gt;Form title&lt;/legend&gt;</code></pre><p class="element-description">Labels a fieldset with a caption. <strong>Best use case:</strong> Use to label the grouped controls within a fieldset.</p></details>
+          <details><summary>&lt;label&gt;</summary><pre><code>&lt;label&gt;Name&lt;input&gt;&lt;/label&gt;</code></pre><p class="element-description">Labels a form control for accessibility. <strong>Best use case:</strong> Use to make form controls accessible with text labels.</p></details>
+          <details><summary>&lt;input&gt;</summary><pre><code>&lt;input type="text" name="name"&gt;</code></pre><p class="element-description">Creates a control for textual or other types of user input. <strong>Best use case:</strong> Use to collect user input like text, email, or passwords.</p></details>
+          <details><summary>&lt;button&gt;</summary><pre><code>&lt;button type="submit"&gt;Send&lt;/button&gt;</code></pre><p class="element-description">Represents a clickable button, often used to submit forms. <strong>Best use case:</strong> Use for actions such as submitting or resetting forms.</p></details>
+          <details><summary>&lt;select&gt;</summary><pre><code>&lt;select&gt;&lt;option&gt;One&lt;/option&gt;&lt;/select&gt;</code></pre><p class="element-description">Creates a drop-down list of options. <strong>Best use case:</strong> Use for a dropdown menu of multiple options.</p></details>
+          <details><summary>&lt;datalist&gt;</summary><pre><code>&lt;input list="browsers"&gt;&lt;datalist id="browsers"&gt;&lt;option value="Chrome"&gt;&lt;/datalist&gt;</code></pre><p class="element-description">Provides an autocomplete list for an input field. <strong>Best use case:</strong> Use to offer suggested values for an input field.</p></details>
+          <details><summary>&lt;optgroup&gt;</summary><pre><code>&lt;optgroup label="Group"&gt;&lt;option&gt;One&lt;/option&gt;&lt;/optgroup&gt;</code></pre><p class="element-description">Groups related options inside a select menu. <strong>Best use case:</strong> Use to group related options inside a select menu.</p></details>
+          <details><summary>&lt;option&gt;</summary><pre><code>&lt;option value="1"&gt;One&lt;/option&gt;</code></pre><p class="element-description">Represents a single option within select or datalist. <strong>Best use case:</strong> Use to define a selectable choice within a list.</p></details>
+          <details><summary>&lt;textarea&gt;</summary><pre><code>&lt;textarea rows="4"&gt;Text&lt;/textarea&gt;</code></pre><p class="element-description">Creates a multi-line text input field. <strong>Best use case:</strong> Use for multi-line text input like comments or notes.</p></details>
+          <details><summary>&lt;output&gt;</summary><pre><code>&lt;output&gt;Result&lt;/output&gt;</code></pre><p class="element-description">Displays calculation or script results. <strong>Best use case:</strong> Use to display the result of a calculation or script.</p></details>
+          <details><summary>&lt;progress&gt;</summary><pre><code>&lt;progress value="50" max="100"&gt;&lt;/progress&gt;</code></pre><p class="element-description">Displays completion progress of a task. <strong>Best use case:</strong> Use to show task completion visually to users.</p></details>
+          <details><summary>&lt;meter&gt;</summary><pre><code>&lt;meter value="0.7" min="0" max="1"&gt;&lt;/meter&gt;</code></pre><p class="element-description">Represents a scalar measurement within a known range. <strong>Best use case:</strong> Use to represent a measured value in a known range.</p></details>
+          <details><summary>&lt;details&gt;</summary><pre><code>&lt;details&gt;&lt;summary&gt;More&lt;/summary&gt;Extra content&lt;/details&gt;</code></pre><p class="element-description">Creates a disclosure widget that can hide or show content. <strong>Best use case:</strong> Use to hide optional content until the user expands it.</p></details>
+          <details><summary>&lt;summary&gt;</summary><pre><code>&lt;summary&gt;More info&lt;/summary&gt;</code></pre><p class="element-description">Labels a details element summary, visible when it is collapsed. <strong>Best use case:</strong> Use to label and toggle the details content.</p></details>
+          <details><summary>&lt;dialog&gt;</summary><pre><code>&lt;dialog&gt;Dialog content&lt;/dialog&gt;</code></pre><p class="element-description">Represents a dialog or popup window. <strong>Best use case:</strong> Use to create modal or popup dialog boxes.</p></details>
+          <details><summary>&lt;menu&gt;</summary><pre><code>&lt;menu&gt;&lt;li&gt;Action&lt;/li&gt;&lt;/menu&gt;</code></pre><p class="element-description">Defines a list of commands for the user. <strong>Best use case:</strong> Use to define a list of commands or actions.</p></details>
+          <details><summary>&lt;menuitem&gt;</summary><pre><code>&lt;menuitem label="Open"&gt;</code></pre><p class="element-description">Represents a command in a menu. <strong>Best use case:</strong> Use to represent a command within a menu.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
