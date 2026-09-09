@@ -508,6 +508,18 @@ body.dark-theme .shop-card:hover {
   margin-top: 1.5rem;
 }
 
+.product-form fieldset {
+  display: grid;
+  gap: 1rem;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-form legend {
+  display: none;
+}
+
 .product-form label {
   display: grid;
   gap: 0.6rem;
@@ -548,6 +560,39 @@ body.dark-theme .product-form textarea:focus {
   min-height: 120px;
   resize: vertical;
   font-family: inherit;
+}
+
+.form-message {
+  display: none;
+  padding: 1rem 1.2rem;
+  margin-top: 1rem;
+  border-radius: 0.85rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  animation: slideIn 0.3s ease;
+}
+
+.form-message-success {
+  background: var(--green-soft);
+  color: var(--green);
+  border: 1.5px solid rgba(43,138,110,0.2);
+}
+
+.form-message-error {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1.5px solid rgba(215,60,50,0.2);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .product-summary {
