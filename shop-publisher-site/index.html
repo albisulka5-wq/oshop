@@ -52,8 +52,8 @@
         </div>
         <div class="hero-card">
           <div class="hero-card-topline"><span class="live-dot"></span> Marketplace live</div>
-          <h2 id="heroCardTitle" data-i18n="heroCardTitle">Shop categories</h2>
-          <p id="heroCardText" data-i18n="heroCardText">Select one category and publish a new product to see it appear below.</p>
+          <h2 id="heroCardTitle" data-i18n="heroCardTitle"></h2>
+          <p id="heroCardText" data-i18n="heroCardText"></p>
           <div class="category-tags">
             <span data-category-key="fashion">Moda</span>
             <span data-category-key="electronics">Elektro</span>
@@ -113,38 +113,42 @@
             <p id="publisherCopy" class="section-copy" data-i18n="publisherCopy">Shtoni oferta të reja, ngarkoni imazhe dhe shikoni inventarin tuaj të përditësuar menjëherë.</p>
           </div>
           <form id="publisherForm" class="product-form">
-            <label>
-              <span id="labelProductName" data-i18n="labelProductName">Emri i produktit</span>
-              <input type="text" id="productName" placeholder="p.sh. Kufje pa tel" required />
-            </label>
-            <label>
-              <span id="labelProductCategory" data-i18n="labelProductCategory">Kategoria</span>
-              <select id="productCategory" required>
-                <option value="fashion" data-i18n="categoryFashion">Moda</option>
-                <option value="electronics" data-i18n="categoryElectronics">Elektro</option>
-                <option value="grocery" data-i18n="categoryGrocery">Market</option>
-                <option value="homegoods" data-i18n="categoryHomeGoods">Shtëpi</option>
-                <option value="books" data-i18n="categoryBooks">Librat</option>
-                <option value="beauty" data-i18n="categoryBeauty">Bukuri</option>
-                <option value="sports" data-i18n="categorySports">Sport</option>
-                <option value="office" data-i18n="categoryOffice">Zyrë</option>
-                <option value="advertising" data-i18n="categoryAdvertising">Reklamë</option>
-              </select>
-            </label>
-            <label>
-              <span id="labelProductPrice" data-i18n="labelProductPrice">Çmimi</span>
-              <input type="number" id="productPrice" min="0" step="0.01" placeholder="49.99" required />
-            </label>
-            <label>
-              <span id="labelProductDescription" data-i18n="labelProductDescription">Përshkrimi</span>
-              <textarea id="productDescription" rows="4" placeholder="Përshkruani produktin"></textarea>
-            </label>
-            <label>
-              <span id="labelProductImage" data-i18n="labelProductImage">URL e imazhit</span>
-              <input type="url" id="productImage" placeholder="https://example.com/image.jpg" />
-            </label>
+            <fieldset>
+              <legend class="sr-only">Product Details</legend>
+              <label>
+                <span id="labelProductName" data-i18n="labelProductName">Emri i produktit</span>
+                <input type="text" id="productName" placeholder="p.sh. Kufje pa tel" required />
+              </label>
+              <label>
+                <span id="labelProductCategory" data-i18n="labelProductCategory">Kategoria</span>
+                <select id="productCategory" required>
+                  <option value="fashion" data-i18n="categoryFashion">Moda</option>
+                  <option value="electronics" data-i18n="categoryElectronics">Elektro</option>
+                  <option value="grocery" data-i18n="categoryGrocery">Market</option>
+                  <option value="homegoods" data-i18n="categoryHomeGoods">Shtëpi</option>
+                  <option value="books" data-i18n="categoryBooks">Librat</option>
+                  <option value="beauty" data-i18n="categoryBeauty">Bukuri</option>
+                  <option value="sports" data-i18n="categorySports">Sport</option>
+                  <option value="office" data-i18n="categoryOffice">Zyrë</option>
+                  <option value="advertising" data-i18n="categoryAdvertising">Reklamë</option>
+                </select>
+              </label>
+              <label>
+                <span id="labelProductPrice" data-i18n="labelProductPrice">Çmimi</span>
+                <input type="number" id="productPrice" min="0" step="0.01" placeholder="49.99" required />
+              </label>
+              <label>
+                <span id="labelProductDescription" data-i18n="labelProductDescription">Përshkrimi</span>
+                <textarea id="productDescription" rows="4" placeholder="Përshkruani produktin"></textarea>
+              </label>
+              <label>
+                <span id="labelProductImage" data-i18n="labelProductImage">URL e imazhit</span>
+                <input type="url" id="productImage" placeholder="https://example.com/image.jpg" />
+              </label>
+            </fieldset>
             <button id="publishButton" type="submit" class="btn btn-primary" data-i18n="publisherButton">Publiko produkt</button>
           </form>
+          <div id="formMessage" class="form-message" role="status" aria-live="polite" aria-atomic="true"></div>
         </div>
         <div class="product-preview">
           <div class="section-header">
@@ -155,9 +159,10 @@
             <span id="productCount">0 produkte të publikuara</span>
           </div>
           <div class="search-box">
+            <label for="searchInput" class="sr-only" data-i18n="searchPlaceholder">Kërko produkte</label>
             <input type="text" id="searchInput" class="search-input" placeholder="Kërko produkte..." data-i18n="searchPlaceholder" />
           </div>
-          <div id="productList" class="product-list">
+          <div id="productList" class="product-list" role="region" aria-live="polite" aria-label="Product results">
             <div class="empty-state">
               <p id="emptyText" data-i18n="emptyText">Ende nuk ka produkte të publikuara.</p>
               <button id="loadSample" class="btn btn-secondary" data-i18n="loadSample">Ngarko produkte shembull</button>
